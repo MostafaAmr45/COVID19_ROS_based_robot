@@ -1,0 +1,37 @@
+<launch>
+  <!-- change this next line to include the launch file for your robot's hardware drivers: -->
+  <!-- <include file="$(find ros_robotics)/launch/ddrobot_control3.launch" /> -->
+
+  <rosparam param="ticks_meter">7000</rosparam>
+
+  <node pkg="ros_robotics" type="lpid_velocity.py" name="lpid_velocity">
+      <rosparam param="Kp">200</rosparam>
+      <rosparam param="Ki">200</rosparam>
+      <rosparam param="Kd">0</rosparam>
+      <rosparam param="out_min">-255</rosparam>
+      <rosparam param="out_max">255</rosparam>
+      <rosparam param="rate">30</rosparam>
+      <rosparam param="timeout_ticks">4</rosparam>
+      <rosparam param="rolling_pts">5</rosparam>
+  </node>
+
+  <node pkg="ros_robotics" type="rpid_velocity.py" name="rpid_velocity">
+      <rosparam param="Kp">200</rosparam>
+      <rosparam param="Ki">200</rosparam>
+      <rosparam param="Kd">0</rosparam>
+      <rosparam param="out_min">-255</rosparam>
+      <rosparam param="out_max">255</rosparam>
+      <rosparam param="rate">30</rosparam>
+      <rosparam param="timeout_ticks">4</rosparam>
+      <rosparam param="rolling_pts">5</rosparam>
+  </node> 
+
+  <!-- <node pkg="ros_robotics" type="send_serial.py" name="send_serial" output="screen"/> -->
+  <node pkg="ros_robotics" type="twist_to_motors.py" name="twist_to_motors" output="screen">
+    <rosparam param="base_width">0.45</rosparam>
+  </node>
+
+   <!-- <node pkg="ros_robotics" type="rwheel_loopback.py" name="rwheel_loopback" output="screen">
+  </node> -->
+
+</launch>
