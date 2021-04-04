@@ -31,6 +31,10 @@
     <rosparam param="base_width">0.45</rosparam>
   </node>
 
+  <node pkg="ros_robotics" type="diff_tf.py" name="diff_tf" output="screen">
+    <rosparam param="base_width">0.45</rosparam>
+  </node>
+
    <!-- <node pkg="ros_robotics" type="rwheel_loopback.py" name="rwheel_loopback" output="screen">
   </node> -->
 
