@@ -9,9 +9,9 @@
       <remap from="motor_cmd" to="lmotor"/>
       <remap from="wheel_vtarget" to="lwheel_vtarget"/>
       <remap from="wheel_vel" to="lwheel_vactual"/>
-      <rosparam param="Kp">200</rosparam>
-      <rosparam param="Ki">200</rosparam>
-      <rosparam param="Kd">0</rosparam>
+      <rosparam param="Kp">300</rosparam>
+      <rosparam param="Ki">300</rosparam>
+      <rosparam param="Kd">1</rosparam>
       <rosparam param="out_min">-255</rosparam>
       <rosparam param="out_max">255</rosparam>
       <rosparam param="rate">30</rosparam>
@@ -23,9 +23,9 @@
       <remap from="motor_cmd" to="rmotor"/>
       <remap from="wheel_vtarget" to="rwheel_vtarget"/>
       <remap from="wheel_vel" to="rwheel_vactual"/>
-      <rosparam param="Kp">200</rosparam>
-      <rosparam param="Ki">200</rosparam>
-      <rosparam param="Kd">0</rosparam>
+      <rosparam param="Kp">300</rosparam>
+      <rosparam param="Ki">300</rosparam>
+      <rosparam param="Kd">1</rosparam>
       <rosparam param="out_min">-255</rosparam>
       <rosparam param="out_max">255</rosparam>
       <rosparam param="rate">30</rosparam>
