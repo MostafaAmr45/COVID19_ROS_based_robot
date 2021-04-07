@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_desc2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00309 0.032154 -0.00080422"
+        rpy="0 0 0" />
+      <mass
+        value="1.5096" />
+      <inertia
+        ixx="0.036974"
+        ixy="-4.5139E-09"
+        ixz="2.8E-07"
+        iyy="0.066747"
+        iyz="0.00059586"
+        izz="0.029801" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="RWall">
+    <inertial>
+      <origin
+        xyz="-0.26007 0.30935 0.054624"
+        rpy="0 0 0" />
+      <mass
+        value="0.25993" />
+      <inertia
+        ixx="0.0042142"
+        ixy="8.2698E-19"
+        ixz="-8.7535E-21"
+        iyy="0.00023376"
+        iyz="-3.1975E-08"
+        izz="0.003982" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RWall.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RWall.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RWall_J"
+    type="fixed">
+    <origin
+      xyz="0.082219 -0.30717 0.024187"
+      rpy="0.016122 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RWall" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RMotor">
+    <inertial>
+      <origin
+        xyz="0.0635746027198063 0.3093063 0.0369188809232349"
+        rpy="0 0 0" />
+      <mass
+        value="0.174311166935646" />
+      <inertia
+        ixx="7.63049300613636E-05"
+        ixy="-2.91448817026934E-20"
+        ixz="-8.64726401443752E-07"
+        iyy="0.000129582523229778"
+        iyz="-2.11758236813575E-22"
+        izz="0.000129389175352264" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RMotor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RMotor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RMotor_J"
+    type="fixed">
+    <origin
+      xyz="-0.16351 0.61861 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="RWall" />
+    <child
+      link="RMotor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RHolder">
+    <inertial>
+      <origin
+        xyz="-0.015 -1.3878E-17 -6.5052E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.18623" />
+      <inertia
+        ixx="0.00019312"
+        ixy="2.5799E-37"
+        ixz="1.9015E-20"
+        iyy="0.00011053"
+        iyz="3.7377E-37"
+        izz="0.00011053" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RHolder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.098039 0.098039 0.098039 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RHolder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RHolder_J"
+    type="fixed">
+    <origin
+      xyz="0.10957 0.30931 0.04693"
+      rpy="1.5547 0 3.1416" />
+    <parent
+      link="RMotor" />
+    <child
+      link="RHolder" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="LWall">
+    <inertial>
+      <origin
+        xyz="0.0963656 0.306947014043264 0.0546235621384063"
+        rpy="0 0 0" />
+      <mass
+        value="0.259931483020872" />
+      <inertia
+        ixx="0.00421417942511159"
+        ixy="5.19830171192504E-19"
+        ixz="8.96205254962918E-21"
+        iyy="0.000233764744170253"
+        iyz="-3.19752741135293E-08"
+        izz="0.00398197426983946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LWall.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LWall.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LWall"
+    type="fixed">
+    <origin
+      xyz="0.082219 -0.30717 0.024187"
+      rpy="0.016122 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LWall" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LMotor">
+    <inertial>
+      <origin
+        xyz="0.0633746027198063 0.3069061 0.036918880923235"
+        rpy="0 0 0" />
+      <mass
+        value="0.174311166935646" />
+      <inertia
+        ixx="7.63049300613636E-05"
+        ixy="-8.61740218545493E-20"
+        ixz="-8.64726401443746E-07"
+        iyy="0.000129582523229778"
+        iyz="-2.11758236813575E-22"
+        izz="0.000129389175352264" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LMotor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LMotor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LMotor_J"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LWall" />
+    <child
+      link="LMotor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LHolder">
+    <inertial>
+      <origin
+        xyz="0.015 0 -8.67361737988404E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.186233612504803" />
+      <inertia
+        ixx="0.000193124256167481"
+        ixy="2.57986041235794E-37"
+        ixz="1.90147164257299E-20"
+        iyy="0.000110529649021601"
+        iyz="3.73766126798668E-37"
+        izz="0.000110529649021601" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LHolder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LHolder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LHolder_J"
+    type="fixed">
+    <origin
+      xyz="0.10937 0.30691 0.04693"
+      rpy="1.5547 0 0" />
+    <parent
+      link="LMotor" />
+    <child
+      link="LHolder" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="FWall">
+    <inertial>
+      <origin
+        xyz="-0.0834212256064657 0.0938861000000002 0.0545396939287937"
+        rpy="0 0 0" />
+      <mass
+        value="0.22086451023762" />
+      <inertia
+        ixx="0.000198305308587292"
+        ixy="-4.89506874945099E-20"
+        ixz="-4.72815915055346E-08"
+        iyy="0.00254369619199725"
+        iyz="6.7762635780344E-21"
+        izz="0.00234671607047139" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/FWall.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/FWall.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FWall_J"
+    type="fixed">
+    <origin
+      xyz="0.0822192517167714 -0.307167638392834 0.0241874937534729"
+      rpy="0.0161222628924041 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FWall" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="BWall">
+    <inertial>
+      <origin
+        xyz="-0.0837958256064657 0.5201261 0.0545396939287938"
+        rpy="0 0 0" />
+      <mass
+        value="0.220864510237622" />
+      <inertia
+        ixx="0.000198305308587294"
+        ixy="-3.63112643371231E-20"
+        ixz="-4.72815915055665E-08"
+        iyy="0.00254369619199728"
+        iyz="-3.3881317890172E-20"
+        izz="0.00234671607047141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/BWall.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/BWall.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BWall_J"
+    type="fixed">
+    <origin
+      xyz="0.0822192517167714 -0.307167638392834 0.0241874937534729"
+      rpy="0.0161222628924041 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="BWall" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="UWall">
+    <inertial>
+      <origin
+        xyz="-0.0848120800930342 0.30577429822358 0.1090994"
+        rpy="0 0 0" />
+      <mass
+        value="0.950849473887881" />
+      <inertia
+        ixx="0.015160328757964"
+        ixy="0.000110416902811185"
+        ixz="-2.2446373102239E-20"
+        iyy="0.0106172485278987"
+        iyz="8.40256683676266E-19"
+        izz="0.0257718721890193" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/UWall.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/UWall.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="UWall_J"
+    type="fixed">
+    <origin
+      xyz="0.0822192517167714 -0.307167638392834 0.0241874937534729"
+      rpy="0.0161222628924041 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="UWall" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="BBone">
+    <inertial>
+      <origin
+        xyz="-0.0787827178917998 0.4658796 0.687775610420949"
+        rpy="0 0 0" />
+      <mass
+        value="1.69381947157314" />
+      <inertia
+        ixx="0.241359185522964"
+        ixy="-6.54147800672129E-20"
+        ixz="-3.75269982353657E-12"
+        iyy="0.248752698140501"
+        iyz="2.64274279543342E-18"
+        izz="0.00740367553436561" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/BBone.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/BBone.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BBone_J"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="UWall" />
+    <child
+      link="BBone" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="MBBHinge">
+    <inertial>
+      <origin
+        xyz="-0.0787827178879982 0.449178530210602 1.09683396755806"
+        rpy="0 0 0" />
+      <mass
+        value="0.0784521456427975" />
+      <inertia
+        ixx="0.00123951914226371"
+        ixy="6.8939312862355E-21"
+        ixz="-5.24214085130467E-19"
+        iyy="0.00123363922526243"
+        iyz="-1.41602641529675E-06"
+        izz="6.35062987513342E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/MBBHinge.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/MBBHinge.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MBBHinge_J"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="BBone" />
+    <child
+      link="MBBHinge" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RElevator">
+    <inertial>
+      <origin
+        xyz="-0.118782717887998 0.432755373756842 1.2206750396997"
+        rpy="0 0 0" />
+      <mass
+        value="0.120380143662927" />
+      <inertia
+        ixx="0.00202358604897058"
+        ixy="1.14490073557874E-22"
+        ixz="-9.03439660911969E-20"
+        iyy="0.00197948344561233"
+        iyz="-3.19340679459731E-06"
+        izz="4.48248842202339E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RElevator.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RElevator.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RElevator_J"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="BBone" />
+    <child
+      link="RElevator" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RBCover">
+    <inertial>
+      <origin
+        xyz="-0.151597026310095 0.435 1.20306288528394"
+        rpy="0 0 0" />
+      <mass
+        value="0.0213060018725367" />
+      <inertia
+        ixx="4.87039064175613E-06"
+        ixy="-6.46855239016468E-22"
+        ixz="6.12560983430486E-07"
+        iyy="1.42979171119072E-05"
+        iyz="-1.44260298829248E-21"
+        izz="9.55536248138631E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RBCover.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RBCover.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RBCover_J"
+    type="fixed">
+    <origin
+      xyz="-0.00378271788799672 -0.00312040000000041 0.0566252457261201"
+      rpy="0 0 0" />
+    <parent
+      link="RElevator" />
+    <child
+      link="RBCover" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RBWall">
+    <inertial>
+      <origin
+        xyz="-0.190000055730344 0.464457316351892 1.20478878755067"
+        rpy="0 0 0" />
+      <mass
+        value="0.02592607709171" />
+      <inertia
+        ixx="2.2145918999036E-05"
+        ixy="-4.34433994599648E-22"
+        ixz="1.66665387127263E-22"
+        iyy="5.60309159155988E-06"
+        iyz="1.87271315746657E-07"
+        izz="1.66983838700264E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RBWall.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RBWall.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RBWall_J"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RBCover" />
+    <child
+      link="RBWall" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LElevator">
+    <inertial>
+      <origin
+        xyz="-0.0387827178879983 0.432755373756842 1.2206750396997"
+        rpy="0 0 0" />
+      <mass
+        value="0.120380143662931" />
+      <inertia
+        ixx="0.00202358604897065"
+        ixy="2.80050121403474E-22"
+        ixz="-9.34089010374759E-20"
+        iyy="0.00197948344561239"
+        iyz="-3.19340679459742E-06"
+        izz="4.48248842202354E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LElevator.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LElevator.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LElevator_J"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="BBone" />
+    <child
+      link="LElevator" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LBCover">
+    <inertial>
+      <origin
+        xyz="0.00159702631009202 0.435000000000001 1.20306288528394"
+        rpy="0 0 0" />
+      <mass
+        value="0.0213060018725367" />
+      <inertia
+        ixx="4.87039064175611E-06"
+        ixy="1.09022404734489E-21"
+        ixz="-6.12560983430432E-07"
+        iyy="1.4297917111907E-05"
+        iyz="-1.45583787809333E-21"
+        izz="9.55536248138611E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LBCover.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LBCover.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LBCover_J"
+    type="fixed">
+    <origin
+      xyz="-0.0037827 -0.0031204 0.056625"
+      rpy="0 0 0" />
+    <parent
+      link="LElevator" />
+    <child
+      link="LBCover" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LBWall">
+    <inertial>
+      <origin
+        xyz="0.0400000557303411 0.464457316351892 1.20478878755067"
+        rpy="0 0 0" />
+      <mass
+        value="0.0259260770917091" />
+      <inertia
+        ixx="2.21459189990352E-05"
+        ixy="-1.4358920969894E-21"
+        ixz="2.6851133953307E-20"
+        iyy="5.60309159155971E-06"
+        iyz="1.87271315746579E-07"
+        izz="1.66983838700257E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LBWall.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LBWall.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LBWall_J"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LBCover" />
+    <child
+      link="LBWall" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Stage">
+    <inertial>
+      <origin
+        xyz="-0.0750000000000013 0.480343747910807 1.231"
+        rpy="0 0 0" />
+      <mass
+        value="0.211120351736145" />
+      <inertia
+        ixx="0.000655067411968549"
+        ixy="1.78554993831274E-18"
+        ixz="7.11454880084177E-22"
+        iyy="0.00109847839714028"
+        iyz="3.01543729222531E-19"
+        izz="0.00175227908699841" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/Stage.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/Stage.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Stage_J"
+    type="fixed">
+    <origin
+      xyz="-0.0037827 -0.0031204 0.056625"
+      rpy="0 0 0" />
+    <parent
+      link="BBone" />
+    <child
+      link="Stage" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+   name="Kinect">
+    <inertial>
+      <origin
+        xyz="4.52836356561845E-05 0.00225040359550244 0.0310718193123996"
+        rpy="0 0 0" />
+      <mass
+        value="0.658662600748487" />
+      <inertia
+        ixx="0.000269654836796406"
+        ixy="9.35627651229598E-07"
+        ixz="-4.36299238413064E-08"
+        iyy="0.00298640049257821"
+        iyz="5.71453317266783E-06"
+        izz="0.00311136626737699" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/Kinect.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.494117647058824 0.494117647058824 0.494117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/Kinect.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Kinect_J"
+    type="fixed">
+    <origin
+      xyz="-0.075 0.52225 1.248"
+      rpy="0 0 3.1416" />
+    <parent
+      link="Stage" />
+    <child
+      link="Kinect" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+   <link
+   name="camera_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+    </visual>
+  </link>
+  <joint
+    name="camera_link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 -1.57" />
+    <parent
+      link="Kinect" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+  <link
+    name="RBBone">
+    <inertial>
+      <origin
+        xyz="-0.12878275 0.423830416863484 0.492738221550915"
+        rpy="0 0 0" />
+      <mass
+        value="0.364837635287879" />
+      <inertia
+        ixx="0.0181196346933366"
+        ixy="-1.2269351145855E-20"
+        ixz="9.12314016495178E-21"
+        iyy="0.0179305052054176"
+        iyz="-8.50071245241008E-05"
+        izz="0.000191318513730686" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RBBone.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RBBone.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RBBone_J"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="UWall" />
+    <child
+      link="RBBone" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LBBone">
+    <inertial>
+      <origin
+        xyz="-0.0287827500000005 0.423830416863484 0.492738221550913"
+        rpy="0 0 0" />
+      <mass
+        value="0.364837635287876" />
+      <inertia
+        ixx="0.0181196346933365"
+        ixy="-2.05096590819343E-19"
+        ixz="-3.55223997282831E-18"
+        iyy="0.0179305052054175"
+        iyz="-8.50071245240919E-05"
+        izz="0.000191318513730684" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LBBone.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LBBone.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LBBone_J"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="UWall" />
+    <child
+      link="LBBone" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RWheel">
+    <inertial>
+      <origin
+        xyz="-0.0310000000000001 1.80411241501588E-16 -1.64798730217797E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.551599291315901" />
+      <inertia
+        ixx="0.00197797363499529"
+        ixy="-4.78762120572077E-18"
+        ixz="4.81482486096809E-35"
+        iyy="0.00111551247187228"
+        iyz="2.71050543121376E-20"
+        izz="0.00111551247187228" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RWheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/RWheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RWheel_J"
+    type="continuous">
+    <origin
+      xyz="-0.19086 0.0013419 0.076098"
+      rpy="1.4527 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RWheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="LWheel">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LWheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_desc2/meshes/LWheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LWheel_J"
+    type="continuous">
+    <origin
+      xyz="0.19158 -0.001058 0.076059"
+      rpy="-1.2758 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LWheel" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
