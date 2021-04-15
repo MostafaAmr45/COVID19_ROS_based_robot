@@ -145,8 +145,6 @@ long Encoder_Read(){
   long newLeft; // , newRight;
   newLeft = knobLeft.read();
   if (newLeft != positionLeft /*|| newRight != positionRight*/) {
-    Serial.print("Left = ");
-    Serial.print(newLeft);
 
     positionLeft = newLeft;
   }
@@ -159,9 +157,6 @@ long Encoder_Read(){
   long newRight;
   newRight = knobRight.read();
   if (newRight != positionRight) {
-    Serial.print(", Right = ");
-    Serial.print(newRight);
-    Serial.println();
     positionRight = newRight;
   }
  
