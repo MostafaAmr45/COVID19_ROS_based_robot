@@ -1,6 +1,6 @@
 <launch>
 
-  <rosparam param="ticks_meter">2600</rosparam>
+  <rosparam param="ticks_meter">2580</rosparam>
 
   <node pkg="motion_control_v2" type="diff_tf.py" name="diff_tf" output="screen">
     <rosparam param="base_width">0.435</rosparam>
