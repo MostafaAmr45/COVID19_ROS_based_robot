@@ -16,8 +16,8 @@
 #define LPWM 6 // define pin 6 for LPWM pin (output)
 #define L_EN 7 // define pin 7 for L_EN pin (input)
 #define L_IS 13 // define pin 8 for L_IS pin (output)
-#define CW 1 //do not change
-#define CCW 0 //do not change
+#define CW 0 //do not change
+#define CCW 1 //do not change
 #define debug 0//change to 0 to hide serial monitor debugging infornmation or set to 1 to view
 
 
@@ -29,19 +29,19 @@
 #define LPWM2 9 // define pin 6 for LPWM pin (output)
 #define L_EN2 11 // define pin 7 for L_EN pin (input)
 #define L_IS2 12 // define pin 8 for L_IS pin (output)
-#define CW 1 //do not change
-#define CCW 0 //do not change
+#define CW 0 //do not change
+#define CCW 1 //do not change
 #define debug 0//change to 0 to hide serial monitor debugging infornmation or set to 1 to view
 
 
-RobojaxBTS7960 motor(R_EN,RPWM,R_IS, L_EN,LPWM,L_IS,debug);
+RobojaxBTS7960 motor2(R_EN,RPWM,R_IS, L_EN,LPWM,L_IS,debug);
 
 
-RobojaxBTS7960 motor2(R_EN2,RPWM2,R_IS2, L_EN2,LPWM2,L_IS2,debug);
+RobojaxBTS7960 motor(R_EN2,RPWM2,R_IS2, L_EN2,LPWM2,L_IS2,debug);
 
 
-Encoder knobLeft(2, 3);
-Encoder knobRight(18, 19);
+Encoder knobRight(3, 2);
+Encoder knobLeft(19, 18);
 
 
 ros::NodeHandle  nh;
@@ -134,8 +134,9 @@ void loop()
   str_msg2.data = EncoderRead2;
 
   chatter.publish( &str_msg );
+  delay(5);
   chatter2.publish( &str_msg2 );
-
+  delay(5);
   nh.spinOnce();
 //  delay(1000);
 }
