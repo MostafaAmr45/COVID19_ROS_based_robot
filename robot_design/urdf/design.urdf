@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_design">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00309 0.032154 -0.00080422"
+        rpy="0 0 0" />
+      <mass
+        value="2.6993E-11" />
+      <inertia
+        ixx="3.364E-17"
+        ixy="-6.846E-22"
+        ixz="-6.6371E-23"
+        iyy="6.442E-22"
+        iyz="-7.7026E-23"
+        izz="3.364E-17" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.18824 0.23137 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="BaseFrameLink">
+    <inertial>
+      <origin
+        xyz="1.925 -0.0345945771464101 0.225000000000282"
+        rpy="0 0 0" />
+      <mass
+        value="1.80403166232039" />
+      <inertia
+        ixx="0.0178653936830095"
+        ixy="-1.05779713445156E-17"
+        ixz="4.26430624171427E-17"
+        iyy="0.020396021619498"
+        iyz="2.17151528411626E-17"
+        izz="0.0229266495559864" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/BaseFrameLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.537254901960784 0.537254901960784 0.537254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/BaseFrameLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BaseFrameJoint"
+    type="fixed">
+    <origin
+      xyz="-0.047068 -2.3962 0.40214"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="BaseFrameLink" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RightMotorLink">
+    <inertial>
+      <origin
+        xyz="0.0635746027198067 0.309306300000008 0.0369188809232509"
+        rpy="0 0 0" />
+      <mass
+        value="0.174311166935647" />
+      <inertia
+        ixx="7.63049300613637E-05"
+        ixy="-4.22136504340412E-20"
+        ixz="-8.64726401443359E-07"
+        iyy="0.000129582523229778"
+        iyz="-1.05795411259731E-21"
+        izz="0.000129389175352264" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/RightMotorLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/RightMotorLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightMotorJoint"
+    type="fixed">
+    <origin
+      xyz="1.868 -0.49431 0.13857"
+      rpy="0 1.5708 0" />
+    <parent
+      link="BaseFrameLink" />
+    <child
+      link="RightMotorLink" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RightWheelHolderLink">
+    <inertial>
+      <origin
+        xyz="0.1435656 0.309306299999999 0.0469297000000005"
+        rpy="0 0 0" />
+      <mass
+        value="0.186233612504803" />
+      <inertia
+        ixx="0.000193124256167481"
+        ixy="7.34683969263929E-36"
+        ixz="1.73206505312213E-20"
+        iyy="0.000110529649021601"
+        iyz="-3.92980039877509E-36"
+        izz="0.000110529649021601" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/RightWheelHolderLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/RightWheelHolderLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightWheelHolderJoint"
+    type="fixed">
+    <origin
+      xyz="0.262131200000004 0 0.0938594000000219"
+      rpy="-3.14159265358978 0 3.14159265358979" />
+    <parent
+      link="RightMotorLink" />
+    <child
+      link="RightWheelHolderLink" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LeftMotorLink">
+    <inertial>
+      <origin
+        xyz="0.0635746027198056 0.309306300000002 0.0369188809232283"
+        rpy="0 0 0" />
+      <mass
+        value="0.174311166935647" />
+      <inertia
+        ixx="7.63049300613638E-05"
+        ixy="-3.79518887414791E-20"
+        ixz="-8.64726401443771E-07"
+        iyy="0.000129582523229778"
+        iyz="-2.67860356837263E-21"
+        izz="0.000129389175352265" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/LeftMotorLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/LeftMotorLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftMotorJoint"
+    type="fixed">
+    <origin
+      xyz="1.9618 -0.49431 0.31143"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="BaseFrameLink" />
+    <child
+      link="LeftMotorLink" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LeftWheelHolderLink">
+    <inertial>
+      <origin
+        xyz="0.143565599999999 0.309306300000007 0.0469296999999842"
+        rpy="0 0 0" />
+      <mass
+        value="0.186233612504803" />
+      <inertia
+        ixx="0.000193124256167481"
+        ixy="-7.98297913806615E-20"
+        ixz="-5.47617888991249E-19"
+        iyy="0.0001105296490216"
+        iyz="0"
+        izz="0.0001105296490216" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/LeftWheelHolderLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/LeftWheelHolderLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftWheelHolderJoint"
+    type="fixed">
+    <origin
+      xyz="-0.025 0.017342 -0.065452"
+      rpy="0.21686 0 0" />
+    <parent
+      link="LeftMotorLink" />
+    <child
+      link="LeftWheelHolderLink" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="FrontSwivelWheelLink">
+    <inertial>
+      <origin
+        xyz="0.0364854927658088 -0.0666056174436166 -4.21934666211543E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.238478719640522" />
+      <inertia
+        ixx="0.000259371959725285"
+        ixy="8.08816851793253E-06"
+        ixz="6.1545715973198E-09"
+        iyy="0.000260349151062166"
+        iyz="-1.06514044693641E-08"
+        izz="0.00046823767776299" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/FrontSwivelWheelLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.807843137254902 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/FrontSwivelWheelLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FrontSwivelWheelJoint"
+    type="fixed">
+    <origin
+      xyz="1.758 -0.11438 0.225"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="BaseFrameLink" />
+    <child
+      link="FrontSwivelWheelLink" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="BackSwivelWheelLink">
+    <inertial>
+      <origin
+        xyz="0.0364854927725196 0.0666056174512983 4.21932540745074E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.238478719887025" />
+      <inertia
+        ixx="0.000259371959802436"
+        ixy="-8.0881685293846E-06"
+        ixz="-6.1545815367994E-09"
+        iyy="0.000260349151135407"
+        iyz="-1.06514429607884E-08"
+        izz="0.000468237677765063" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/BackSwivelWheelLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.807843137254902 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/BackSwivelWheelLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BackSwivelWheelJoint"
+    type="fixed">
+    <origin
+      xyz="2.092 -0.11438 0.225"
+      rpy="3.1416 0 0" />
+    <parent
+      link="BaseFrameLink" />
+    <child
+      link="BackSwivelWheelLink" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="MainBodyLink">
+    <inertial>
+      <origin
+        xyz="0.924945866748017 0.312240718170233 1.03170937190914"
+        rpy="0 0 0" />
+      <mass
+        value="15.7223989505737" />
+      <inertia
+        ixx="1.1613332639017"
+        ixy="-0.0384827887462151"
+        ixz="-0.00836721922962208"
+        iyy="1.31670250326503"
+        iyz="0.0140443561818124"
+        izz="0.837150872051241" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/MainBodyLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.972549019607843 0.968627450980392 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/MainBodyLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MainBodyJoint"
+    type="fixed">
+    <origin
+      xyz="-0.74707 -0.77167 0.18214"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="MainBodyLink" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="KinectLink">
+    <inertial>
+      <origin
+        xyz="-0.00683736561252293 0.00422441796679807 0.0318215229406513"
+        rpy="0 0 0" />
+      <mass
+        value="0.658654793489767" />
+      <inertia
+        ixx="0.000269650115760434"
+        ixy="9.35912056841219E-07"
+        ixz="-4.30590322552481E-08"
+        iyy="0.0029863532771689"
+        iyz="5.71457394023284E-06"
+        izz="0.00311131604592704" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/KinectLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/KinectLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="KinectJoint"
+    type="fixed">
+    <origin
+      xyz="0.73145 0.8 1.2182"
+      rpy="0.061807 0 0" />
+    <parent
+      link="MainBodyLink" />
+    <child
+      link="KinectLink" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+   <link
+   name="camera_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+    </visual>
+  </link>
+  <joint
+    name="camera_link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="KinectLink" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+  <link
+    name="RightWheelLink">
+    <inertial>
+      <origin
+        xyz="-0.031 0 -1.6653E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.5516" />
+      <inertia
+        ixx="0.001978"
+        ixy="4.1116E-36"
+        ixz="1.4283E-36"
+        iyy="0.0011155"
+        iyz="6.8856E-36"
+        izz="0.0011155" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/RightWheelLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.098039 0.098039 0.098039 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/RightWheelLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightWheelJoint"
+    type="continuous">
+    <origin
+      xyz="0.012068E-16 -0.48135 0.071714"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RightWheelLink" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="LeftWheelLink">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/LeftWheelLink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_design/meshes/LeftWheelLink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftWheelJoint"
+    type="continuous">
+    <origin
+      xyz="-0.012068E-16 0.48135 0.071714"
+      rpy="-1.5708 3.14 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LeftWheelLink" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
