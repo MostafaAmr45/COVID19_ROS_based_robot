@@ -20,7 +20,7 @@ Servo RearServo;
 
 #define LPWM 6 // define pin 6 for LPWM pin (output)
 #define L_EN 7 // define pin 7 for L_EN pin (input)
-#define L_IS 13 // define pin 8 for L_IS pin (output)
+#define L_IS 16 // define pin 8 for L_IS pin (output)
 #define CW 0 //do not change
 #define CCW 1 //do not change
 #define debug 0//change to 0 to hide serial monitor debugging infornmation or set to 1 to view
@@ -29,11 +29,11 @@ Servo RearServo;
 //--------left motor-----------
 #define RPWM2 8 // define pin 3 for RPWM pin (output)
 #define R_EN2 10 // define pin 2 for R_EN pin (input)
-#define R_IS2  16// define pin 5 for R_IS pin (output)
+#define R_IS2  20// define pin 5 for R_IS pin (output)
 
 #define LPWM2 9 // define pin 6 for LPWM pin (output)
 #define L_EN2 11 // define pin 7 for L_EN pin (input)
-#define L_IS2 12 // define pin 8 for L_IS pin (output)
+#define L_IS2 21 // define pin 8 for L_IS pin (output)
 #define CW 0 //do not change
 #define CCW 1 //do not change
 #define debug 0//change to 0 to hide serial monitor debugging infornmation or set to 1 to view
@@ -119,30 +119,30 @@ void messageCb_servo (const std_msgs::String& Vmsg){
        if(servo_pin_value=="00")
         {
 
-            FrontServo.write(0);
-            RearServo.write(0);
+            FrontServo.write(90);
+            RearServo.write(90);
             digitalWrite(FrontRelay, LOW);
             digitalWrite(RearRelay, LOW);
 
         }
        else if(servo_pin_value=="01")
         { 
-            FrontServo.write(0);
-            RearServo.write(0);
+            FrontServo.write(90);
+            RearServo.write(90);
             digitalWrite(FrontRelay, HIGH);
             digitalWrite(RearRelay, HIGH);
         }
        else if(servo_pin_value=="10")
         { 
-            FrontServo.write(180);
-            RearServo.write(180);
+            FrontServo.write(0);
+            RearServo.write(0);
             digitalWrite(FrontRelay, LOW);
             digitalWrite(RearRelay, LOW);
         }
        else if(servo_pin_value="11")
         { 
-            FrontServo.write(180);
-            RearServo.write(180);            
+            FrontServo.write(0);
+            RearServo.write(0);            
             digitalWrite(FrontRelay, HIGH);
             digitalWrite(RearRelay, HIGH);
         }
@@ -172,8 +172,8 @@ void setup()
   nh.subscribe(servo_pin);  
 
   
- FrontServo.attach(A10);
- RearServo.attach(A11);
+ FrontServo.attach(12);
+ RearServo.attach(13);
 
  pinMode(FrontRelay, OUTPUT);
  pinMode(RearRelay, OUTPUT);
