@@ -5,7 +5,7 @@
     <arg name="rtabmapviz"        default="false"/>
 
     <arg     if="$(arg localization)" name="args"  default=""/>
-    <arg unless="$(arg localization)" name="args"  default="--delete_db_on_start"/>
+    <arg unless="$(arg localization)" name="args"  default=""/>
 
 
 
@@ -21,7 +21,7 @@
 
 <!-- robot state publishing -->
 <!-- URDF FILE & Launch file -->
-<include file="$(find robot_desc2)/launch/display.launch">
+<include file="$(find robot_design)/launch/display.launch">
 </include>
 
 
@@ -38,6 +38,8 @@
           <param name="subscribe_depth" type="bool" value="true"/>
           <param name="subscribe_scan" type="bool" value="true"/>
           <param name="wait_for_transform_duration"  type="double"   value="0.2"/>
+
+          <!--pram name= "Grid/NoiseFilteringRadius" type="string" value="0.2"/-->
 
 
           <!-- inputs -->
@@ -64,7 +66,7 @@
           <param name="RGBD/LinearUpdate"         type="string" value="0.01"/>
           <param name="RGBD/OptimizeFromGraphEnd" type="string" value="false"/>
           <param name="Reg/Force3DoF"             type="string" value="true"/>
-          <param name="Vis/MinInliers"            type="string" value="12"/>
+          <param name="Vis/MinInliers"            type="string" value="9"/>
 
           <!-- localization mode -->
           <param     if="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="false"/>
